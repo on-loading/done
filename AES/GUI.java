@@ -5,8 +5,13 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -31,7 +36,7 @@ public class GUI implements ActionListener{
     JButton decryptButton=new JButton("解密");
     JButton importButton=new JButton("导入");
     JButton exportButton=new JButton("导出");
-    JLabel keyJLabel=new JLabel("128位密钥：",SwingConstants.LEFT);
+    JLabel keyJLabel=new JLabel("16位密钥：",SwingConstants.LEFT);
     JTextField keyField=new JTextField(15);
     JTextArea cleartext;
     JTextArea ciphertext;
@@ -107,6 +112,7 @@ public class GUI implements ActionListener{
         encryptButton.addActionListener(this);
         decryptButton.addActionListener(this);
         importButton.addActionListener(this);
+        exportButton.addActionListener(this);
         frame.setVisible(true);
 	}
 
@@ -149,7 +155,7 @@ public class GUI implements ActionListener{
 		if(e.getSource()==importButton){
 			JFileChooser fileChooser=new JFileChooser();
 			fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
-			fileChooser.showDialog(new JLabel(), "导入");
+			fileChooser.showDialog(new JLabel(), "导入密文");
 			File file=fileChooser.getSelectedFile();
 			try{
 			FileReader reader=new FileReader(file);
@@ -159,12 +165,57 @@ public class GUI implements ActionListener{
 			while((tempString=bufferedReader.readLine())!=null){
 				buffer.append(tempString);
 			}
-			cleartext.setText(buffer.toString());
+			ciphertext.setText(buffer.toString());
 			}catch (Exception E) {
 				// TODO: handle exception
 				E.printStackTrace();
 			}
 			
+		}
+		if(e.getSource()==exportButton){
+			JFileChooser fileChooser=new JFileChooser();
+			fileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+			int select=fileChooser.showSaveDialog(frame);
+			BufferedWriter bw=null;
+			File file=null;
+			String fileName=null;
+			if(select==JFileChooser.APPROVE_OPTION){
+				file=fileChooser.getSelectedFile();
+			}
+			//fileChooser.showDialog(new JLabel(), "导入密文");
+			fileName = fileChooser.getName(file);
+            if(fileName==null|| fileName.trim().length()==0){
+                JOptionPane.showMessageDialog(null, "文件名为空！");
+            }
+            
+            if(file.isFile()){
+                fileName = file.getName();
+            }
+            //否则是个文件夹
+            file = fileChooser.getCurrentDirectory();//获得当前目录
+            
+            String path = file.getPath()+java.io.File.separator+fileName;
+            file =new File(path);
+        
+             if(file.exists()) {  //若选择已有文件----询问是否要覆盖   
+                 int i = JOptionPane.showConfirmDialog(null, "该文件已经存在，确定要覆盖吗？");     
+                 if(i == JOptionPane.YES_OPTION)   ;     
+                 else   return ;    
+                 }
+             try {
+                 bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file)));
+                 bw.write(ciphertext.getText());
+                 bw.flush();
+             } catch (FileNotFoundException e1) {
+                 JOptionPane.showMessageDialog(null, "文件保存出错"+e1.getMessage());
+             } catch (IOException e1) {
+                 e1.printStackTrace();
+             }finally{
+                 try {
+                     if(bw!=null) bw.close();
+                 } catch (IOException e1) {
+                 }
+             }
 		}
 		
 	}
