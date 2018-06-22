@@ -1,4 +1,4 @@
-####用XML配置实现MyBatis增删改查的例子
+####用XML配置实现MyBatis增删改查的例子<br>
 		• 数据库结构
 		| no   | bookName             | author  | price |
          |:-----:|:-----|-----:|

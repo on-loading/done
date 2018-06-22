@@ -87,14 +87,14 @@ public class MybatisTest {
 	
 	@Test 
 	public void testInsert(){
-		try{
-			Book book=new Book(1016,"数据库原理","seyg",47);
-			int result=bookMapper.insert(book);
-			sqlSession.commit();  //提交到数据库，否则数据库内容不变
-			assertEquals(1, result);
-		}catch (Exception e) {
-			e.printStackTrace();
-		}
+//		try{
+//			Book book=new Book(1016,"数据库原理","seyg",47);
+//			int result=bookMapper.insert(book);
+//			sqlSession.commit();  //提交到数据库，否则数据库内容不变
+//			assertEquals(1, result);
+//		}catch (Exception e) {
+//			e.printStackTrace();
+//		}
 		
 	}
 	
