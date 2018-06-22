@@ -1,5 +1,5 @@
 ####用XML配置实现MyBatis增删改查的例子<br>
-		• 数据库结构
+		• 数据库结构<br>
 		| no   | bookName             | author  | price |
          |:-----:|:-----|-----:|
 
