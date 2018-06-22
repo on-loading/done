@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mappers.BookMapper">
+
+   <!-- 数据库列名与对应属性的映射 -->
+   <resultMap type="models.Book" id="bookMap">
+       <id property="no" column="no" />
+       <result property="bookName" column="bookname"  />
+       <result property="author" column="author"  />
+       <result property="price"   column="price"/>
+  
+  </resultMap>
+  
+   <!-- 选择 -->
+   <select id="selectAll" resultType="Book">
+         select * from books
+   </select>
+
+   <select  id="selectByNo" parameterType="int" resultType="Book">
+        select * from books where no=#{no}
+   </select>
+        
+   <select id="selectByAuthor" parameterType="String" resultType="Book"   >
+          select * from books where author=#{author}
+   </select>     
+   
+   
+   <!-- 插入 -->
+   <insert id="insert" parameterType="models.Book">
+       insert into books(no,bookName,author,price)
+           values(#{no},#{bookName},#{author},#{price})
+   </insert>
+
+   <!-- 更新 -->
+   <update id="updatePriceByNo">
+         update books set price=#{1} where no=#{0}
+         <!-- #{0}表示对应方法的第一个参数，#{2}表示对应方法的第二个参数  -->
+   </update>
+  
+   <!-- 删除 -->
+   <delete id="deleteByNo">
+       delete from books where no=#{no}
+   </delete>
+   
+   
+   
+   
+</mapper>

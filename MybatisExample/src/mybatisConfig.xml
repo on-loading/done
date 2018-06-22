@@ -3,20 +3,22 @@
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration><!-- 根元素 -->
     <typeAliases> <!-- 为一些类定义别名-->
-        <typeAlias alias="Country" type="com.mybatis.models.Country" /> 
+        <typeAlias type="models.Book" alias="Book" />
     </typeAliases>
     <environments default="development"> <!-- mybatis 的环境  -->
         <environment id="development">
         <transactionManager type="JDBC" /><!-- 事务管理器 -->
             <dataSource type="POOLED">  <!-- 数据源 -->
                             <property name="driver" value="com.mysql.jdbc.Driver" />
-                <property name="url" value="jdbc:mysql://localhost:3306/mybatistest" />
+                <property name="url" value="jdbc:mysql://localhost:3306/mybatistest?useSSL=false" />
                 <property name="username" value="root" />
                 <property name="password" value="a123456" />
                        </dataSource>
         </environment>
     </environments>
     <mappers> <!-- 指定映射文件或映射类 -->     
-         <mapper resource="com/mybatis/models/Country.xml" />
+         <mapper resource="mappers/BookMapper.xml" />
+
+
     </mappers>
 </configuration>
