@@ -1,7 +1,6 @@
 ####用XML配置实现MyBatis增删改查的例子
 		• 数据库结构
 | no   | bookName  | author  | price |
-|-|-|-|-|
 
 		• models包中的是实体类
 		• mappers包中的是对应的映射接口
