@@ -18,6 +18,7 @@
     </environments>
     <mappers> <!-- 指定映射文件或映射类 -->     
          <mapper resource="mappers/BookMapper.xml" />
+         <mapper class="mappers.BookMapper_annotation"/>
 
 
     </mappers>
