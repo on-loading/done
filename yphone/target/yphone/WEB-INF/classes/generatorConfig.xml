@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <context defaultModelType="conditional" id="saleWrite" targetRuntime="MyBatis3">
+        <property name="renamePlugin.search" value=""/>
+        <property name="renamePlugin.replace" value=""/>
+        <property name="renamePlugin.prefix" value="MBG"/>
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+        <plugin type="com.yphone.utils.mybatis.MySQLRowBoundsPlugin"/>
+        <plugin type="com.yphone.utils.mybatis.RenamePlugin"/>
+        <plugin type="com.yphone.utils.mybatis.SeparateUserCodePlugin"/>
+        <!-- <plugin type="com.dream.utils.mybatis.plugin.ParentExamplesPlugin">
+             <property name="parentExample" value="BaseExample"/>
+         </plugin>-->
+        <commentGenerator type="com.yphone.utils.mybatis.CommentGenerator">
+            <property name="suppressAllComments" value="false"/>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+        <jdbcConnection connectionURL="jdbc:mysql://139.199.8.73:3306/yphone?useUnicode=yes&amp;characterEncoding=UTF8"
+                        driverClass="com.mysql.jdbc.Driver"
+                        password="123456"
+                        userId="root"/>
+        <javaTypeResolver type="com.yphone.utils.mybatis.CustomJavaTypeResolver">
+            <property name="customTypeMap" value="TINYINT:java.lang.Integer,LONGVARCHAR:java.lang.String,TEXT:java.lang.String"/>
+        </javaTypeResolver>
+        <javaModelGenerator targetPackage="com.yphone.model.nochange" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+            <property name="renamePlugin.prefix" value=""/>
+        </javaModelGenerator>
+        <sqlMapGenerator targetPackage="mappers.nochange" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+            <property name="separateUserCodePlugin.targetPackage" value="mappers"/>
+        </sqlMapGenerator>
+        <javaClientGenerator targetPackage="com.yphone.mappers.nochange" targetProject="src/main/java"
+                             type="XMLMAPPER">
+            <property name="enableSubPackages" value="true"/>
+            <property name="exampleMethodVisibility" value="public"/>
+            <property name="methodNameCalculator" value="default"/>
+            <property name="separateUserCodePlugin.targetPackage" value="com.yphone.mappers"/>
+            <property name="separateUserCodePlugin.search" value="\AMBG"/>
+            <property name="separateUserCodePlugin.replace" value=""/>
+        </javaClientGenerator>
+        <table  tableName="user_info" domainObjectName="UserInfo">
+            <property name="useActualColumnNames" value="false"/>
+            <generatedKey column="user_id" identity="true" sqlStatement="MySql"/>
+        </table>
+        <table  tableName="shopping_card" domainObjectName="ShoppingCard">
+            <property name="useActualColumnNames" value="false"/>
+            <generatedKey column="shopping_card_id" identity="true" sqlStatement="MySql"/>
+        </table>
+        <table  tableName="phone_info" domainObjectName="PhoneInfo">
+            <property name="useActualColumnNames" value="false"/>
+            <generatedKey column="phone_id" identity="true" sqlStatement="MySql"/>
+        </table>
+        <table  tableName="order_generator" domainObjectName="OrderGenerator">
+            <property name="useActualColumnNames" value="false"/>
+            <generatedKey column="order_generator_id" identity="true" sqlStatement="MySql"/>
+        </table>
+        <table  tableName="order_list" domainObjectName="Order">
+            <property name="useActualColumnNames" value="false"/>
+            <generatedKey column="order_id" identity="true" sqlStatement="MySql"/>
+        </table>
+        <table  tableName="district" domainObjectName="District">
+            <property name="useActualColumnNames" value="false"/>
+            <generatedKey column="district_id" identity="true" sqlStatement="MySql"/>
+        </table>
+        <table  tableName="comment" domainObjectName="Comment">
+            <property name="useActualColumnNames" value="false"/>
+            <generatedKey column="comment_id" identity="true" sqlStatement="MySql"/>
+        </table>
+        <table  tableName="admin_info" domainObjectName="AdminInfo">
+            <property name="useActualColumnNames" value="false"/>
+            <generatedKey column="admin_id" identity="true" sqlStatement="MySql"/>
+        </table>
+        <table  tableName="address_used" domainObjectName="AddressUsed">
+            <property name="useActualColumnNames" value="false"/>
+            <generatedKey column="address_used_id" identity="true" sqlStatement="MySql"/>
+        </table>
+    </context>
+</generatorConfiguration>

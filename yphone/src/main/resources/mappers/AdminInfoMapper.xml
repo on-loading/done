@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yphone.mappers.AdminInfoMapper" >
+
+    <select id="isAdminExist" resultType="java.lang.Integer">
+        SELECT COUNT(*) from admin_info where admin_name=#{adminName}
+    </select>
+
+    <select id="getAdminPassword" resultType="java.lang.String">
+        select password from admin_info where admin_name=#{adminName}
+    </select>
+
+
+</mapper>

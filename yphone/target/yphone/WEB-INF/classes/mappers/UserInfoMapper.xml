@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yphone.mappers.UserInfoMapper" >
+
+    <select id="getPwdByUname" resultType="java.lang.String">
+        SELECT password from user_info where user_name=#{userName};
+    </select>
+    <select id="getPwdByPhone" resultType="java.lang.String">
+        SELECT password from user_info where phone=#{phone};
+    </select>
+
+    <select id="isPhoneExist" resultType="java.lang.Integer">
+        SELECT COUNT(*) from user_info where phone=#{phone}
+    </select>
+
+    <select id="isUserNameExist" resultType="java.lang.Integer">
+        SELECT COUNT(*) from user_info where user_name=#{userName}
+    </select>
+
+    <select id="getNameByPhone" parameterType="java.lang.String" resultType="java.lang.String">
+        SELECT user_name from user_info WHERE phone=#{phone}
+    </select>
+
+    <select id="getPhoneByName" parameterType="java.lang.String" resultType="java.lang.String">
+        SELECT phone from user_info WHERE user_name=#{name}
+    </select>
+
+    <select id="getUserIDByPhone" parameterType="java.lang.String" resultType="java.lang.Long">
+        SELECT user_id from user_info WHERE phone=#{phone}
+    </select>
+
+    <select id="getUserIDByUsername" parameterType="java.lang.String" resultType="java.lang.Long">
+        SELECT user_id from user_info WHERE user_name=#{username}
+    </select>
+
+    </mapper>

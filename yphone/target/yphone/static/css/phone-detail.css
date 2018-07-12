@@ -1,0 +1,182 @@
+
+
+
+.phone_main{
+    padding-top:32px;
+    position: relative;
+    width: 1230px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.phone_view{
+    position: relative;
+    float: left;
+    height: 600px;
+    margin-left: 0;
+    width: 590px;
+}
+
+
+.phone_info{
+    float: right;
+    margin-left: 12px;
+    width:590px;
+}
+
+
+#myCarousel{
+    background: #fff;
+    margin-top:20px;
+    margin-left: 20px;
+    height: 450px;
+    width: 450px;
+}
+#myCarousel a{
+    background: #fff;
+
+}
+
+
+
+.myCarousel-inner{
+    width: 450px;
+}
+
+/* .phone_name{
+    height: 30px;
+} */
+.phone_name .name{
+    height: 30px;
+    font-size: 24px;
+    color: #212121;
+}
+
+
+.phone_item{
+    font-size: 16px;
+    margin-top:25px;
+    width:200px;
+    line-height:40px;
+    margin-right: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    min-height: 1px;
+    position: relative;
+    float: left;
+}
+.phone_item .name{
+    color: #333;
+    vertical-align: top;
+}
+
+/* .phone_item .param{
+    color:#999;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: top;
+} */
+
+.phone_item .price{
+    color: #F40;
+    font-size: 16px;
+}
+
+.phone_stock{
+    font-size: 16px;
+    height: 44px;
+    line-height: 40px;
+    color:#333;
+    padding-top: 40px;
+    /* padding: 0; */
+}
+
+.phone_stock .name{
+    display: block;
+    float: left;
+    width: 40px;
+}
+
+.phone_stock .buy_num{
+    float: left;
+    position: relative;
+    border: 1px solid #d6d6d6;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 2px;
+}
+
+.buy_num .product-stock-text{
+    float: left;
+    width: 41px;
+    height: 44px;
+    line-height: 44px;
+    border: 0;
+    text-align: center;
+    border-right: 1px solid #e2e2e2;
+}
+
+.buy_num .product-stock-btn{
+    width:21px;
+    float: left;
+}
+
+
+.buy_num .product-stock-btn a{
+    display: block;
+    font-size: 16px;
+    width: 21px;
+    height: 21px;
+    line-height: 22px;
+    text-align: center;
+    color: #777;
+    font-weight: bold;
+}
+
+.phone_stock .phone_num{
+    float: left;
+    margin-left: 20px;
+}
+
+
+.buy_phone{
+    padding-top: 40px;
+    position: relative;
+}
+
+.buy_phone a{
+    float: left;
+    margin-right: 30px;
+    text-decoration: none;
+}
+
+.buy_phone .product-button01{
+    display: block;
+    background: #fc600c;
+    width:172px;
+    height: 46px;
+    font-size: 18px;
+    line-height: 46px;
+    text-align: center;
+    color: #fff;
+    border-radius: 2px;
+    border: 0;
+    cursor: pointer;
+}
+
+.buy_phone .product-button02{
+    display: block;
+    background: #ca151d;
+    width:172px;
+    height: 46px;
+    font-size: 18px;
+    line-height: 46px;
+    text-align: center;
+    color: #fff;
+    border-radius: 2px;
+    border: 0;
+    cursor: pointer;
+}
+

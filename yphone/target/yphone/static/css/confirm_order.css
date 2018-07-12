@@ -1,0 +1,290 @@
+
+
+.header{
+    margin-top:15px;
+    margin-bottom: 15px;
+    height: 60px;
+    min-width: 1200px;
+    background: #fff;
+    position: relative;
+}
+
+.left{
+    float: left;
+}
+
+.logo{
+
+    position: relative;
+    display: block;
+    width:250px;
+    height:60px;
+    overflow: hidden;
+}
+
+.logo .imgstyle{
+    width: 80px;
+    height: 60px;
+    object-position: center;
+}
+
+.logo .text{
+    font-size: 26px;
+    margin-left: 30px;
+    padding-top: 50px;
+    color: #333;
+}
+
+
+.right{
+    float: right;
+}
+
+.prograss_submit{
+
+    height: 60px;
+    width: 350px;
+    margin-right: 30px;
+}
+
+.prograss_submit img{
+    height:60px;
+    width:300px;
+}
+
+.layout{
+    width:100%;
+    margin: 0 auto;
+    min-width: 1200px;
+    background: #f5f5f5;
+}
+
+
+.layout .hr20{
+
+    height: 20px;
+    width: 100%;
+
+}
+.order-address{
+    background: #fff;
+    padding-top:15px;
+    margin-left:60px;
+    margin-right:60px;
+    padding-left: 40px;
+    padding-bottom: 15px;
+}
+
+.order-address .h{
+    position: relative;
+    top:5px;
+    line-height: 30px;
+    font-size:18px;
+}
+
+.order-address .order-address-list{
+    width:1120px;
+}
+
+.order-address-list>ul{
+    position: relative;
+    width:1140px;
+    list-style: none;
+}
+
+.order-address-list li .namePhone{
+    margin-top:30px;
+
+}
+
+.order-address-list li{
+    float: left;
+    margin-right: 20px;
+    margin-top:20px;
+    width:250px;
+    height: 122px;
+    position: relative;
+    border:1px solid #eaeaea;
+}
+
+.order-address-list li .item{
+    margin-left: 30px;
+}
+/* .order-address-list .address-empty{
+    border:1px solid #eaeaea;
+} */
+
+.order-address-list .address-empty .address-add-btn{
+    width: 100%;
+    height:100%;
+    display: block;
+    line-height: 120px;
+    border:0;
+    font-size: 14px;
+    text-align: center;
+    color:#3a3a3a;
+    text-indent: 8px;
+    background: #fff;
+}
+
+.order-detail-area{
+    height: 300px;
+    position: relative;
+    margin-left:60px;
+    margin-right:60px;
+    background: #fff;
+
+}
+.order-detail{
+    padding-left:40px;
+    float:left;
+    width:719px;
+    min-height: 200px;
+
+}
+
+
+
+.order-detail  .title{
+    font-size: 18px;
+    color: #3a3a3a;
+    margin-top:15px;
+    margin-bottom: 30px;
+}
+
+.order-detail .detail{
+    margin-left: 15px;
+
+    font-size:16px;
+}
+
+.order-detail thead,tbody{
+    padding-top:30px;
+}
+
+.order-submit{
+    float:right;
+    width:319px;
+    padding:0 20px;
+}
+
+.order-submit-info{
+    margin-top: 100px;
+    font-size: 18px;
+}
+
+.order-submit-info b{
+    font-size: 24px;
+    color: #ca141d;
+}
+
+
+.order-submit .order-submit-confirm{
+
+    margin-top:20px;
+    text-decoration: none;
+    text-align: center;
+    background: #ca141d;
+    width: 172px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    border-radius: 2px;
+
+}
+
+.order-submit .order-submit-confirm a{
+    color:#fff;
+    text-decoration: none;
+}
+
+
+.form-group .address-info{
+    position: absolute;
+    margin: 0;
+}
+
+
+.address-info{
+    display: none;
+    background: #fff;
+    width: 560px;
+}
+
+.address-head{
+    height: 60px;
+}
+
+.address-body{
+    height: 240px;
+}
+
+.address-head .left{
+    height: 30px;
+    position: relative;
+}
+
+.address-head .right{
+    height: 30px;
+    position: relative;
+
+}
+
+.right a{
+    float: right;
+    margin-right:15px;
+    margin-top:15px;
+    text-decoration: none;
+    font-size: 15px;
+}
+.clearfix{
+    clear:both;
+}
+
+.address-head .left a{
+    float: left;
+    margin-left: 25px;
+    text-align: center;
+    color: #333;
+    text-decoration: none;
+    font-size: 15px;
+    /* border-bottom: #f00 solid 1px; */
+}
+
+
+.address-head .left span{
+    display: block;
+    margin-top: 15px;
+    margin-left:25px;
+    position: absolute;
+    width: 40px;
+    color: #f00;
+
+}
+.address-body{
+    position: relative;
+}
+
+.address-list{
+    position: relative;
+    overflow: hidden;
+    padding:0;
+    list-style-type: none;
+}
+
+.address-list .address-items{
+    font-size: 8px;
+    height: 24px;
+    margin-top: 8px;
+    position: relative;
+    float: left;
+    width: 55px;
+    margin-left:5px;
+
+
+}
+
+.address-list .address-items a{
+    color: #333;
+    text-decoration: none;
+}

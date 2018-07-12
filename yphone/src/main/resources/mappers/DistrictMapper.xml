@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yphone.mappers.DistrictMapper" >
+
+    <select id="selectProvinces" resultType="java.lang.String">
+        SELECT name from district WHERE district_id &lt; 35
+    </select>
+
+    <select id="selectCitiesByProvince" parameterType="java.lang.String" resultType="java.lang.String">
+        select name from district where parent_id in (select district_id from district where name=#{province})
+    </select>
+
+    <select id="selectCountiesByCity" parameterType="java.lang.String" resultType="java.lang.String">
+        select name from district where parent_id in (select district_id from district where name=#{city})
+    </select>
+
+    <select id="getAddressByID" parameterType="java.lang.Integer" resultType="java.util.HashMap">
+        SELECT district_id,name from district where parent_id=#{id}
+    </select>
+</mapper>
